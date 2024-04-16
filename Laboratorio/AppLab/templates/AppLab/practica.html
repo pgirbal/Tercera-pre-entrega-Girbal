@@ -4,4 +4,24 @@
 
 {% block contenidoQueCambia %}
 
+    <h1>Carga de nueva práctica</h1>
+
+    {% if FormularioPractica.errors %}
+
+    <p style="color: red"> Están mal los datos, revisar </p>
+
+    {% endif %}
+
+
+    <form action=""    method="POST"> {% csrf_token %}
+
+        <table>
+
+            {{ FormularioPractica.as_table }}
+
+        </table>
+
+        <input type = "submit" value="Enviar">
+    </form>
+    
 {% endblock %}
